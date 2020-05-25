@@ -18,6 +18,6 @@ print("Length of video: ",yt.length)
 ys = yt.streams.get_highest_resolution()
 
 #Starting download
-print("Download Started...")
+print("Downloading...")
 ys.download()
-print("Download completed...")
+print("Download completed!!")
