@@ -3,21 +3,36 @@
 # pip install pytube3
 #This will install the pytube3 which will be required.
 
-from pytube import Youtube
+from pytube import YouTube
 
-#ask for the link from user
-link = input("Enter the link of YouTube video you want to download:  ")
-yt = YouTube(link)
+#Asking for all the video links
+n = int(input("Enter the number of youtube videos to download:   "))
+links=[]
+print("\nEnter all the links one per line:")
 
-#Showing details
-print("Title: ",yt.title)
-print("Number of views: ",yt.views)
-print("Length of video: ",yt.length)
+for i in range(0,n):
+    temp = input()
+    links.append(temp)
 
-#Getting the highest resolution possible
-ys = yt.streams.get_highest_resolution()
-
-#Starting download
-print("Downloading...")
-ys.download()
-print("Download completed!!")
+#Showing all details for videos and downloading them one by one
+for i in range(0,n):
+    link = links[i]
+    yt = YouTube(link)
+    print("\nDetails for Video",i+1,"\n")
+    print("Title of video:   ",yt.title)
+    print("Number of views:  ",yt.views)
+    print("Length of video:  ",yt.length,"seconds")
+    stream = str(yt.streams.filter(progressive=True))
+    stream = stream[1:]
+    stream = stream[:-1]
+    streamlist = stream.split(", ")
+    print("\nAll available options for downloads:\n")
+    for i in range(0,len(streamlist)):
+        st = streamlist[i].split(" ")
+        print(i+1,") ",st[1]," and ",st[3],sep='')
+    tag = int(input("\nEnter the itag of your preferred stream to download:   "))
+    ys = yt.streams.get_by_itag(tag)
+    print("\nDownloading...")
+    ys.download()
+    print("\nDownload completed!!")
+    print()
