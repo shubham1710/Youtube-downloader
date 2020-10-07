@@ -1,7 +1,7 @@
 #Make sure you have installed pytube3 on your system. If not done, follow these steps:-
 #Open your anaconda or python3 app and use the following command:
-# pip install pytube3
-#This will install the pytube3 which will be required.
+# pip install pytubeX
+#This will install the pytubeX which will be required.
 
 from pytube import YouTube
 
