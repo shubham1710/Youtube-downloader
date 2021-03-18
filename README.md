@@ -7,5 +7,5 @@ So, you need to use pip install pytubeX for this purpose. Though while importing
 
 Install from official reprository(to avoid already solved bugs) as of sometimes PIP don't update the libraries that fast
 write this command : - 
-python -m pip install git+https://github.com/pytube/pytube
+`python -m pip install git+https://github.com/pytube/pytube`
 
