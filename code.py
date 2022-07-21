@@ -33,6 +33,6 @@ for i in range(0,n):
     tag = int(input("\nEnter the itag of your preferred stream to download:   "))
     ys = yt.streams.get_by_itag(tag)
     print("\nDownloading...")
-    ys.download()
+    ys.download(output_path='/Users/craigjanisch/Downloads')
     print("\nDownload completed!!")
     print()
