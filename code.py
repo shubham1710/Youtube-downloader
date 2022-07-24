@@ -22,7 +22,7 @@ for i in range(0,n):
     print("Title of video:   ",yt.title)
     print("Number of views:  ",yt.views)
     print("Length of video:  ",yt.length,"seconds")
-    stream = str(yt.streams.filter(progressive=True))
+    stream = str(yt.streams.filter(file_extension='mp4'))
     stream = stream[1:]
     stream = stream[:-1]
     streamlist = stream.split(", ")
