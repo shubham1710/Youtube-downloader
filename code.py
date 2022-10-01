@@ -33,9 +33,13 @@ for i in range(0, n):
     stream = stream[:-1]
     streamlist = stream.split(", ")
     print("\nAll available options for downloads:\n")
-    for i in range(0,len(streamlist)):
+    
+    # loop around all available streams and print them for user to decide
+    for i in range(0, len(streamlist)):
         st = streamlist[i].split(" ")
-        print(i+1,") ",st[1]," and ",st[3],sep='')
+        print(i+1, ") ", st[1], " and ", st[3], sep='')
+    
+    # ask user the tag forthe stream to download
     tag = int(input("\nEnter the itag of your preferred stream to download:   "))
     ys = yt.streams.get_by_itag(tag)
     print("\nDownloading...")
